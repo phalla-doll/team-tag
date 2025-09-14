@@ -169,7 +169,7 @@ export function UserInputSection() {
                     <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
                         Preview
                     </h4>
-                    <Card className="bg-white/20 max-w-sm min-h-120 dark:bg-gray-800/20 backdrop-blur-sm border border-white/30 dark:border-gray-700/30 rounded-lg shadow-lg w-full overflow-hidden relative h-80">
+                    <Card className="bg-white/20 max-w-sm min-h-120 py-0 dark:bg-gray-800/20 backdrop-blur-sm border border-white/30 dark:border-gray-700/30 rounded-lg shadow-lg w-full overflow-hidden relative h-80">
                         {formData.imagePreview ? (
                             <>
                                 <div
