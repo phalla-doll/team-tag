@@ -1,14 +1,14 @@
 "use client";
 
-import { Download, Megaphone, User } from "lucide-react";
+import { Download, Megaphone } from "lucide-react";
 import { useState } from "react";
 import BlurEffect from "react-progressive-blur";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import ImageUpload from "@/components/extended/image-upload";
 
 interface FormData {
     id: string;
@@ -34,15 +34,12 @@ export function UserInputSection() {
         }));
     };
 
-    const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const file = event.target.files?.[0];
-        if (file) {
-            setFormData((prev) => ({
-                ...prev,
-                image: file,
-                imagePreview: URL.createObjectURL(file),
-            }));
-        }
+    const handleImageChange = (file: File | null, preview: string) => {
+        setFormData((prev) => ({
+            ...prev,
+            image: file,
+            imagePreview: preview,
+        }));
     };
 
     const handleSubmit = (event: React.FormEvent) => {
@@ -152,26 +149,7 @@ export function UserInputSection() {
                                     >
                                         Profile Image
                                     </Label>
-                                    <div className="flex items-center space-x-4">
-                                        <Avatar className="h-16 w-16">
-                                            <AvatarImage
-                                                src={formData.imagePreview}
-                                                alt="Profile preview"
-                                            />
-                                            <AvatarFallback>
-                                                <User className="h-8 w-8" />
-                                            </AvatarFallback>
-                                        </Avatar>
-                                        <div className="flex-1">
-                                            <Input
-                                                id="image"
-                                                type="file"
-                                                accept="image/*"
-                                                onChange={handleImageChange}
-                                                className="bg-white/50 dark:bg-gray-700/50 border-gray-300 dark:border-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-gray-100 file:text-gray-700 hover:file:bg-gray-200 dark:file:bg-gray-600 dark:file:text-gray-300 dark:hover:file:bg-gray-500"
-                                            />
-                                        </div>
-                                    </div>
+                                    <ImageUpload onImageChange={handleImageChange} />
                                 </div>
 
                                 {/* Submit Button */}
