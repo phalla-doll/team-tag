@@ -159,8 +159,6 @@ export function UserInputSection() {
                                         onImageChange={handleImageChange}
                                     />
                                 </div>
-
-                                {/* Submit Button */}
                             </form>
                         </CardContent>
                     </Card>
