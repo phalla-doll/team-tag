@@ -66,8 +66,8 @@ export function UserInputSection() {
                     A Cooler Way to Create Social Media Tags.
                 </h1>
                 <p className="text-gray-600 dark:text-gray-300 text-base">
-                    TagGenerator is a platform for creating free social media tags for your
-                    social media.
+                    TagGenerator is a platform for creating free social media
+                    tags for your social media.
                 </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
