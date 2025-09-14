@@ -169,7 +169,7 @@ export function UserInputSection() {
                     <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
                         Preview
                     </h4>
-                    <Card className="bg-white/20 max-w-sm min-h-120 py-0 dark:bg-gray-800/20 backdrop-blur-sm border border-white/30 dark:border-gray-700/30 rounded-lg shadow-lg w-full overflow-hidden relative h-80">
+                    <Card className="bg-white/20 max-w-sm min-h-140 dark:bg-gray-800/20 backdrop-blur-sm border border-white/30 dark:border-gray-700/30 rounded-lg shadow-lg w-full overflow-hidden relative h-80">
                         {formData.imagePreview ? (
                             <>
                                 <div
@@ -189,13 +189,13 @@ export function UserInputSection() {
                         )}
                         <CardContent className="relative z-10 flex flex-col justify-end h-full p-6">
                             <div className="text-center space-y-2">
-                                <h3 className="text-xl font-semibold text-white drop-shadow-lg">
+                                <h3 className="text-2xl font-semibold text-white drop-shadow-lg text-shadow-lg">
                                     {formData.name || "Your Name"}
                                 </h3>
-                                <p className="text-gray-200 drop-shadow-md">
+                                <p className="text-gray-100 drop-shadow-md text-shadow-md">
                                     {formData.description || "Your Description"}
                                 </p>
-                                <p className="text-sm text-gray-300 drop-shadow-md">
+                                <p className="text-sm text-gray-100 drop-shadow-md text-shadow-md">
                                     ID: {formData.id || "Your ID"}
                                 </p>
                             </div>
@@ -206,7 +206,7 @@ export function UserInputSection() {
                         className="w-auto bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
                     >
                         <Download className="size-4" />
-                        Download Card
+                        Download Tag
                     </Button>
                 </div>
             </div>
