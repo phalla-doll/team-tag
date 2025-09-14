@@ -13,7 +13,7 @@ import ImageUpload from "@/components/extended/image-upload";
 interface FormData {
     id: string;
     name: string;
-    position: string;
+    description: string;
     image: File | null;
     imagePreview: string;
 }
@@ -22,7 +22,7 @@ export function UserInputSection() {
     const [formData, setFormData] = useState<FormData>({
         id: "",
         name: "",
-        position: "",
+        description: "",
         image: null,
         imagePreview: "",
     });
@@ -130,16 +130,16 @@ export function UserInputSection() {
                                         htmlFor="position"
                                         className="text-sm font-medium text-gray-700 dark:text-gray-300"
                                     >
-                                        Position
+                                        Description
                                     </Label>
                                     <Input
-                                        id="position"
+                                        id="description"
                                         type="text"
-                                        placeholder="Enter position/role"
-                                        value={formData.position}
+                                        placeholder="Enter description"
+                                        value={formData.description}
                                         onChange={(e) =>
                                             handleInputChange(
-                                                "position",
+                                                "description",
                                                 e.target.value,
                                             )
                                         }
@@ -153,7 +153,7 @@ export function UserInputSection() {
                                         htmlFor="image"
                                         className="text-sm font-medium text-gray-700 dark:text-gray-300"
                                     >
-                                        Profile Image
+                                        Image
                                     </Label>
                                     <ImageUpload
                                         onImageChange={handleImageChange}
@@ -193,7 +193,7 @@ export function UserInputSection() {
                                     {formData.name || "Your Name"}
                                 </h3>
                                 <p className="text-gray-200 drop-shadow-md">
-                                    {formData.position || "Your Position"}
+                                    {formData.description || "Your Description"}
                                 </p>
                                 <p className="text-sm text-gray-300 drop-shadow-md">
                                     ID: {formData.id || "Your ID"}
