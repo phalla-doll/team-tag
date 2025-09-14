@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button"
-import { ThemeSwitcher } from "@/components/extended/theme-switcher"
-import { MainLogo } from "@/components/branding/main-logo"
+import { Button } from "@/components/ui/button";
+import { ThemeSwitcher } from "@/components/extended/theme-switcher";
+import { MainLogo } from "@/components/branding/main-logo";
 
 export function MainToolbar() {
     return (
@@ -20,5 +20,5 @@ export function MainToolbar() {
                 </div>
             </div>
         </div>
-    )
+    );
 }

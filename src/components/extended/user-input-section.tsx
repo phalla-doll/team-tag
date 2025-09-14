@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -24,23 +24,23 @@ export function UserInputSection() {
         name: "",
         position: "",
         image: null,
-        imagePreview: ""
+        imagePreview: "",
     });
 
     const handleInputChange = (field: keyof FormData, value: string) => {
-        setFormData(prev => ({
+        setFormData((prev) => ({
             ...prev,
-            [field]: value
+            [field]: value,
         }));
     };
 
     const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
         if (file) {
-            setFormData(prev => ({
+            setFormData((prev) => ({
                 ...prev,
                 image: file,
-                imagePreview: URL.createObjectURL(file)
+                imagePreview: URL.createObjectURL(file),
             }));
         }
     };
@@ -55,17 +55,19 @@ export function UserInputSection() {
         <div className="container mx-auto py-32 flex flex-col space-y-10">
             <div className="space-y-2">
                 <div className="">
-                    <Badge variant="outline"><Megaphone className="size-4" /> 23,000+ Cards Generated</Badge>
+                    <Badge variant="outline">
+                        <Megaphone className="size-4" /> 23,000+ Cards Generated
+                    </Badge>
                 </div>
                 <h1 className="text-4xl font-medium tracking-tight text-gray-900 dark:text-white">
                     A Cooler Way to Create Team Tags.
                 </h1>
                 <p className="text-gray-600 dark:text-gray-300 text-base">
-                    TeamTag is a platform for creating free team tags for your team.
+                    TeamTag is a platform for creating free team tags for your
+                    team.
                 </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
                 <div className="">
                     <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                         Enter Information Below
@@ -75,7 +77,10 @@ export function UserInputSection() {
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 {/* ID Field */}
                                 <div className="space-y-2">
-                                    <Label htmlFor="id" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    <Label
+                                        htmlFor="id"
+                                        className="text-sm font-medium text-gray-700 dark:text-gray-300"
+                                    >
                                         ID
                                     </Label>
                                     <Input
@@ -83,14 +88,22 @@ export function UserInputSection() {
                                         type="text"
                                         placeholder="Enter ID"
                                         value={formData.id}
-                                        onChange={(e) => handleInputChange("id", e.target.value)}
+                                        onChange={(e) =>
+                                            handleInputChange(
+                                                "id",
+                                                e.target.value,
+                                            )
+                                        }
                                         className="bg-white/50 dark:bg-gray-700/50 border-gray-300 dark:border-gray-600"
                                     />
                                 </div>
 
                                 {/* Name Field */}
                                 <div className="space-y-2">
-                                    <Label htmlFor="name" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    <Label
+                                        htmlFor="name"
+                                        className="text-sm font-medium text-gray-700 dark:text-gray-300"
+                                    >
                                         Name
                                     </Label>
                                     <Input
@@ -98,14 +111,22 @@ export function UserInputSection() {
                                         type="text"
                                         placeholder="Enter full name"
                                         value={formData.name}
-                                        onChange={(e) => handleInputChange("name", e.target.value)}
+                                        onChange={(e) =>
+                                            handleInputChange(
+                                                "name",
+                                                e.target.value,
+                                            )
+                                        }
                                         className="bg-white/50 dark:bg-gray-700/50 border-gray-300 dark:border-gray-600"
                                     />
                                 </div>
 
                                 {/* Position Field */}
                                 <div className="space-y-2">
-                                    <Label htmlFor="position" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    <Label
+                                        htmlFor="position"
+                                        className="text-sm font-medium text-gray-700 dark:text-gray-300"
+                                    >
                                         Position
                                     </Label>
                                     <Input
@@ -113,19 +134,30 @@ export function UserInputSection() {
                                         type="text"
                                         placeholder="Enter position/role"
                                         value={formData.position}
-                                        onChange={(e) => handleInputChange("position", e.target.value)}
+                                        onChange={(e) =>
+                                            handleInputChange(
+                                                "position",
+                                                e.target.value,
+                                            )
+                                        }
                                         className="bg-white/50 dark:bg-gray-700/50 border-gray-300 dark:border-gray-600"
                                     />
                                 </div>
 
                                 {/* Image Upload Field */}
                                 <div className="space-y-2">
-                                    <Label htmlFor="image" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    <Label
+                                        htmlFor="image"
+                                        className="text-sm font-medium text-gray-700 dark:text-gray-300"
+                                    >
                                         Profile Image
                                     </Label>
                                     <div className="flex items-center space-x-4">
                                         <Avatar className="h-16 w-16">
-                                            <AvatarImage src={formData.imagePreview} alt="Profile preview" />
+                                            <AvatarImage
+                                                src={formData.imagePreview}
+                                                alt="Profile preview"
+                                            />
                                             <AvatarFallback>
                                                 <User className="h-8 w-8" />
                                             </AvatarFallback>
@@ -143,7 +175,6 @@ export function UserInputSection() {
                                 </div>
 
                                 {/* Submit Button */}
-
                             </form>
                         </CardContent>
                     </Card>
@@ -157,7 +188,9 @@ export function UserInputSection() {
                             <>
                                 <div
                                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                                    style={{ backgroundImage: `url(${formData.imagePreview})` }}
+                                    style={{
+                                        backgroundImage: `url(${formData.imagePreview})`,
+                                    }}
                                 />
                                 <BlurEffect
                                     className="w-full h-full"
@@ -191,6 +224,6 @@ export function UserInputSection() {
                     </Button>
                 </div>
             </div>
-        </div >
-    )
+        </div>
+    );
 }
