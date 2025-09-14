@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { ThemeSwitcher } from "@/components/extended/theme-switcher";
 import { MainLogo } from "@/components/branding/main-logo";
+import { ThemeSwitcher } from "@/components/extended/theme-switcher";
+import { Button } from "@/components/ui/button";
 
 export function MainToolbar() {
     return (

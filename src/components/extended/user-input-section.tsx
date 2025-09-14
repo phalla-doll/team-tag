@@ -1,14 +1,14 @@
 "use client";
 
+import { Download, Megaphone, User } from "lucide-react";
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import BlurEffect from "react-progressive-blur";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Download, Megaphone, User } from "lucide-react";
-import BlurEffect from "react-progressive-blur";
 
 interface FormData {
     id: string;
