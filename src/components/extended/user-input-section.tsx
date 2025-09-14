@@ -1,7 +1,7 @@
 "use client";
 
 import { Download, Megaphone } from "lucide-react";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import BlurEffect from "react-progressive-blur";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -27,20 +27,26 @@ export function UserInputSection() {
         imagePreview: "",
     });
 
-    const handleInputChange = (field: keyof FormData, value: string) => {
-        setFormData((prev) => ({
-            ...prev,
-            [field]: value,
-        }));
-    };
+    const handleInputChange = useCallback(
+        (field: keyof FormData, value: string) => {
+            setFormData((prev) => ({
+                ...prev,
+                [field]: value,
+            }));
+        },
+        [],
+    );
 
-    const handleImageChange = (file: File | null, preview: string) => {
-        setFormData((prev) => ({
-            ...prev,
-            image: file,
-            imagePreview: preview,
-        }));
-    };
+    const handleImageChange = useCallback(
+        (file: File | null, preview: string) => {
+            setFormData((prev) => ({
+                ...prev,
+                image: file,
+                imagePreview: preview,
+            }));
+        },
+        [],
+    );
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
@@ -149,7 +155,9 @@ export function UserInputSection() {
                                     >
                                         Profile Image
                                     </Label>
-                                    <ImageUpload onImageChange={handleImageChange} />
+                                    <ImageUpload
+                                        onImageChange={handleImageChange}
+                                    />
                                 </div>
 
                                 {/* Submit Button */}
