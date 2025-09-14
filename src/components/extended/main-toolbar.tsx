@@ -11,7 +11,7 @@ export function MainToolbar() {
                         <MainLogo />
                     </div>
 
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center space-x-1 sm:space-x-2">
                         <ThemeSwitcher />
                         <Button variant="ghost" size="sm">
                             Advertise with us?
