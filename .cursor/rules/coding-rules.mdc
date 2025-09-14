@@ -151,7 +151,7 @@ export function PatientDialog({ patient, onSave, onCancel }: PatientDialogProps)
 Before submitting code for review, ensure:
 - [ ] All TypeScript errors are resolved
 - [ ] ESLint passes without errors
-- [ ] Run `npm run build` if necessary (big changes) and DO NOT run `npm run dev` 
+- [ ] Run `npm run lint` if necessary (big changes) and DO NOT run `npm run build` or `npm run dev` unless told
 - [ ] Components are properly typed
 - [ ] Performance considerations are addressed
 - [ ] Error handling is implemented
