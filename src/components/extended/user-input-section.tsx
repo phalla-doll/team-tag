@@ -55,7 +55,7 @@ export function UserInputSection() {
     };
 
     return (
-        <div className="container mx-auto py-32 flex flex-col space-y-10">
+        <div className="container mx-auto py-32 flex flex-col space-y-10 z-10">
             <div className="space-y-2">
                 <div className="">
                     <Badge variant="outline">
