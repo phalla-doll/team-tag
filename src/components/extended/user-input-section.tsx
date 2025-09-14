@@ -72,17 +72,17 @@ export function UserInputSection() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="">
-                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                    {/* <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                         Enter Information Below to Generate a Tag
-                    </h4>
-                    <Card className="bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm border border-white/30 dark:border-gray-700/30 rounded-lg p-6 shadow-lg">
+                    </h4> */}
+                    <Card className="bg-white/20 max-w-xl dark:bg-gray-800/20 backdrop-blur-sm border border-white/30 dark:border-gray-700/30 rounded-lg p-6 shadow-lg">
                         <CardContent>
-                            <form onSubmit={handleSubmit} className="space-y-6">
+                            <form onSubmit={handleSubmit} className="space-y-4">
                                 {/* ID Field */}
                                 <div className="space-y-2">
                                     <Label
                                         htmlFor="id"
-                                        className="text-sm font-medium text-gray-700 dark:text-gray-300"
+                                        className="text-sm font-medium text-muted-foreground"
                                     >
                                         ID
                                     </Label>
@@ -105,7 +105,7 @@ export function UserInputSection() {
                                 <div className="space-y-2">
                                     <Label
                                         htmlFor="name"
-                                        className="text-sm font-medium text-gray-700 dark:text-gray-300"
+                                        className="text-sm font-medium text-muted-foreground"
                                     >
                                         Name
                                     </Label>
@@ -128,7 +128,7 @@ export function UserInputSection() {
                                 <div className="space-y-2">
                                     <Label
                                         htmlFor="position"
-                                        className="text-sm font-medium text-gray-700 dark:text-gray-300"
+                                        className="text-sm font-medium text-muted-foreground"
                                     >
                                         Description
                                     </Label>
@@ -151,7 +151,7 @@ export function UserInputSection() {
                                 <div className="space-y-2">
                                     <Label
                                         htmlFor="image"
-                                        className="text-sm font-medium text-gray-700 dark:text-gray-300"
+                                        className="text-sm font-medium text-muted-foreground"
                                     >
                                         Image
                                     </Label>
