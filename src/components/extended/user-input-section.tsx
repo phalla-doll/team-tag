@@ -59,21 +59,21 @@ export function UserInputSection() {
             <div className="space-y-2">
                 <div className="">
                     <Badge variant="outline">
-                        <Megaphone className="size-4" /> 23,000+ Cards Generated
+                        <Megaphone className="size-4" /> 23,000+ Tags Generated
                     </Badge>
                 </div>
                 <h1 className="text-4xl font-medium tracking-tight text-gray-900 dark:text-white">
-                    A Cooler Way to Create Team Tags.
+                    A Cooler Way to Create Social Media Tags.
                 </h1>
                 <p className="text-gray-600 dark:text-gray-300 text-base">
-                    TeamTag is a platform for creating free team tags for your
-                    team.
+                    TagGenerator is a platform for creating free social media tags for your
+                    social media.
                 </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="">
                     <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                        Enter Information Below
+                        Enter Information Below to Generate a Tag
                     </h4>
                     <Card className="bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm border border-white/30 dark:border-gray-700/30 rounded-lg p-6 shadow-lg">
                         <CardContent>
