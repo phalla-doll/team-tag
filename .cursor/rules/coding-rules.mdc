@@ -115,6 +115,7 @@ export function PatientDialog({ patient, onSave, onCancel }: PatientDialogProps)
 - Import from `@/components/ui/` path
 - Follow shadcn/ui patterns and conventions
 - Extend components when needed, don't modify source
+- Every import should start with `@`
 
 ### Responsive Design
 - Use Tailwind's responsive prefixes: `sm:`, `md:`, `lg:`, `xl:`
