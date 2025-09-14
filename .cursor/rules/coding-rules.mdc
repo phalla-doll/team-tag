@@ -1,0 +1,311 @@
+---
+alwaysApply: true
+---
+
+# Dental Clinic System - Coding Rules
+
+## Project Overview
+This is a Next.js 15 TypeScript project for a dental clinic management system using:
+- Next.js 15 with App Router
+- TypeScript with strict mode
+- Tailwind CSS v4
+- shadcn/ui components
+- Radix UI primitives
+- GSAP for animations
+- Recharts for data visualization
+
+## File Structure & Organization
+
+### Directory Structure
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── dashboard/         # Dashboard pages
+│   └── layout.tsx        # Root layout
+├── components/            # Reusable components
+│   ├── ui/               # shadcn/ui components
+│   ├── dashboard/        # Dashboard-specific components
+│   ├── dialog/           # Modal dialogs
+│   └── charts/           # Chart components
+├── lib/                  # Utilities and interfaces
+└── hooks/                # Custom React hooks
+```
+
+### Naming Conventions
+
+#### Files & Directories
+- Use kebab-case for file and directory names: `appointment-dialog.tsx`
+- Use PascalCase for component files: `AppointmentDialog.tsx`
+- Use camelCase for utility files: `utils.ts`
+- Use descriptive names that indicate purpose
+
+#### Components
+- Use PascalCase for component names: `AppointmentDialog`
+- Use descriptive names that indicate functionality
+- Prefix with domain when needed: `PatientDialog`, `StaffDialog`
+
+#### Interfaces & Types
+- Use PascalCase for interfaces: `Patient`, `Appointment`
+- Use descriptive names that match the domain model
+- Export interfaces from `src/lib/global.interface.ts`
+
+## TypeScript Rules
+
+### Strict Type Safety
+- Enable strict mode in `tsconfig.json`
+- Use proper typing for all variables, parameters, and return values
+- Avoid `any` type - use `unknown` or proper interfaces
+- Use type guards when checking object properties
+- Be careful with Hydration issue
+
+### Interface Design
+```typescript
+// ✅ Good - Clear, descriptive interface
+export interface Patient {
+    id?: string;
+    patientCode: string;
+    fullName: string;
+    gender: 'Male' | 'Female' | 'Other';
+    // ... other properties
+}
+```
+
+## Component Architecture
+
+### Component Structure
+```typescript
+// ✅ Good - Proper component structure
+import { useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { Patient } from '@/lib/global.interface'
+
+interface PatientDialogProps {
+    patient?: Patient
+    onSave: (patient: Patient) => void
+    onCancel: () => void
+}
+
+export function PatientDialog({ patient, onSave, onCancel }: PatientDialogProps) {
+    const [formData, setFormData] = useState<Partial<Patient>>(patient || {})
+    
+    // Component logic here
+    
+    return (
+        <div>
+            {/* JSX content */}
+        </div>
+    )
+}
+```
+
+### Props Interface
+- Always define props interface for components
+- Use descriptive prop names
+- Make optional props explicit with `?`
+- Use union types for constrained values
+
+### State Management
+- Use `useState` for local component state
+- Use `useEffect` for side effects. Make sure to avoid missing-dependency warning
+- Keep state as close to where it's used as possible
+- Use proper TypeScript typing for state
+
+### Shadcn/ui Usage
+- Use shadcn/ui components as the primary UI library
+- Import from `@/components/ui/` path
+- Follow shadcn/ui patterns and conventions
+- Extend components when needed, don't modify source
+
+### Responsive Design
+- Use Tailwind's responsive prefixes: `sm:`, `md:`, `lg:`, `xl:`
+- Design mobile-first
+- Test on multiple screen sizes
+- Use translation for labels and make sure to add for all languages available
+- Use `aria-label` for accessibility when appropriate
+
+### React Hook Form
+- Use `react-hook-form` for form management
+- Implement proper validation (aligned with `database_schema.sql`)
+- Use TypeScript for form data typing
+
+## Error Handling
+- Use Try-Catch blocks
+
+### Code Splitting
+- Each component should have only 300 - 400 lines Max
+- Each component should serve very specific purposes, less is better
+
+### Memoization
+- Use `useMemo()` from React 
+
+### Color Contrast
+- This project is based on Tailwind color palletes
+
+### API Design
+- Use RESTful conventions
+- Implement proper error responses
+- Use consistent response formats
+- Should have loading-state with Skeleton from Shadcn
+
+## Review Checklist
+Before submitting code for review, ensure:
+- [ ] All TypeScript errors are resolved
+- [ ] ESLint passes without errors
+- [ ] Run `npm run build` if necessary (big changes) and DO NOT run `npm run dev` 
+- [ ] Components are properly typed
+- [ ] Performance considerations are addressed
+- [ ] Error handling is implemented
+- [ ] Documentation is updated if needed
+# Dental Clinic System - Coding Rules
+
+## Project Overview
+This is a Next.js 15 TypeScript project for a dental clinic management system using:
+- Next.js 15 with App Router
+- TypeScript with strict mode
+- Tailwind CSS v4
+- shadcn/ui components
+- Radix UI primitives
+- GSAP for animations
+- Recharts for data visualization
+
+## File Structure & Organization
+
+### Directory Structure
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── dashboard/         # Dashboard pages
+│   └── layout.tsx        # Root layout
+├── components/            # Reusable components
+│   ├── ui/               # shadcn/ui components
+│   ├── dashboard/        # Dashboard-specific components
+│   ├── dialog/           # Modal dialogs
+│   └── charts/           # Chart components
+├── lib/                  # Utilities and interfaces
+└── hooks/                # Custom React hooks
+```
+
+### Naming Conventions
+
+#### Files & Directories
+- Use kebab-case for file and directory names: `appointment-dialog.tsx`
+- Use PascalCase for component files: `AppointmentDialog.tsx`
+- Use camelCase for utility files: `utils.ts`
+- Use descriptive names that indicate purpose
+
+#### Components
+- Use PascalCase for component names: `AppointmentDialog`
+- Use descriptive names that indicate functionality
+- Prefix with domain when needed: `PatientDialog`, `StaffDialog`
+
+#### Interfaces & Types
+- Use PascalCase for interfaces: `Patient`, `Appointment`
+- Use descriptive names that match the domain model
+- Export interfaces from `src/lib/global.interface.ts`
+
+## TypeScript Rules
+
+### Strict Type Safety
+- Enable strict mode in `tsconfig.json`
+- Use proper typing for all variables, parameters, and return values
+- Avoid `any` type - use `unknown` or proper interfaces
+- Use type guards when checking object properties
+
+### Interface Design
+```typescript
+// ✅ Good - Clear, descriptive interface
+export interface Patient {
+    id?: string;
+    patientCode: string;
+    fullName: string;
+    gender: 'Male' | 'Female' | 'Other';
+    // ... other properties
+}
+```
+
+## Component Architecture
+
+### Component Structure
+```typescript
+// ✅ Good - Proper component structure
+import { useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { Patient } from '@/lib/global.interface'
+
+interface PatientDialogProps {
+    patient?: Patient
+    onSave: (patient: Patient) => void
+    onCancel: () => void
+}
+
+export function PatientDialog({ patient, onSave, onCancel }: PatientDialogProps) {
+    const [formData, setFormData] = useState<Partial<Patient>>(patient || {})
+    
+    // Component logic here
+    
+    return (
+        <div>
+            {/* JSX content */}
+        </div>
+    )
+}
+```
+
+### Props Interface
+- Always define props interface for components
+- Use descriptive prop names
+- Make optional props explicit with `?`
+- Use union types for constrained values
+
+### State Management
+- Use `useState` for local component state
+- Use `useEffect` for side effects
+- Keep state as close to where it's used as possible
+- Use proper TypeScript typing for state
+
+### Shadcn/ui Usage
+- Use shadcn/ui components as the primary UI library
+- Import from `@/components/ui/` path
+- Follow shadcn/ui patterns and conventions
+- Extend components when needed, don't modify source
+
+### Responsive Design
+- Use Tailwind's responsive prefixes: `sm:`, `md:`, `lg:`, `xl:`
+- Design mobile-first
+- Test on multiple screen sizes
+- Use translation for labels and make sure to add for all languages available
+- Use `aria-label` for accessibility when appropriate
+
+### React Hook Form
+- Use `react-hook-form` for form management
+- Implement proper validation (aligned with `database_schema.sql`)
+- Use TypeScript for form data typing
+
+## Error Handling
+- Use Try-Catch blocks
+
+### Code Splitting
+- Each component should have only 300 - 400 lines Max
+- Each component should serve very specific purposes, less is better
+
+### Memoization
+- Use `useMemo()` from React 
+
+### Color Contrast
+- This project is based on Tailwind color palletes
+
+### API Design
+- Use RESTful conventions
+- Implement proper error responses
+- Use consistent response formats
+- Should have loading-state with Skeleton from Shadcn
+
+## Review Checklist
+Before submitting code for review, ensure:
+- [ ] All TypeScript errors are resolved
+- [ ] ESLint passes without errors
+- [ ] Run `npm run build` if you necessary and DO NOT run `npm run dev` 
+- [ ] Components are properly typed
+- [ ] Performance considerations are addressed
+- [ ] Error handling is implemented
+- [ ] Documentation is updated if needed
